@@ -18,7 +18,14 @@
   </properties>
 
   <dependencies>
-<dependency>
+      <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+      <dependency>
+          <groupId>com.mysql</groupId>
+          <artifactId>mysql-connector-j</artifactId>
+          <version>8.0.33</version>
+      </dependency>
+
+      <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
       <version>5.0.0</version>
