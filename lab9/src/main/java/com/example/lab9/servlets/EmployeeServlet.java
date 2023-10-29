@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -72,13 +73,36 @@ public class EmployeeServlet extends HttpServlet {
 
         String action = request.getParameter("action") == null ? "crear" : request.getParameter("action");
 
+
+        String birthDate = request.getParameter("birthDate");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String gender = (request.getParameter("gender"));
+        String hireDate = request.getParameter("hireDate");
+
         switch (action){
             case "crear":
-                // TODO
+
+                EmployeeDao.create(birthDate, firstName, lastName, gender, hireDate);
+
+                response.sendRedirect(request.getContextPath() + "/EmployeeServlet");
                 break;
             case "e":
-                // TODO
+                Employee emp = new Employee();
+                int empNo = Integer.parseInt(request.getParameter("empNo"));
+
+                emp.setEmpNo(empNo);
+                emp.setBirthDate(birthDate);
+                emp.setFirstName(firstName);
+                emp.setLastName(lastName);
+                emp.setGender(gender);
+                emp.setHireDate(hireDate);
+
+                EmployeeDao.actualizar(emp);
+
+                response.sendRedirect(request.getContextPath() + "/EmployeeServlet");
                 break;
+
             case "s":
                 String textBuscar = request.getParameter("textoBuscar");
                 ArrayList<Employee> lista = employeeDao.searchByName(textBuscar);
