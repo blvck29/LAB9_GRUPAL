@@ -102,15 +102,15 @@ public class TitleServlet extends HttpServlet {
                 if(isAllValid2){
                     Title title = new Title();
                     title.setTitle(titleEmpNo2);
-                    title.setJobTitle(titleTitle2);
-                    title.setMinSalary(Integer.parseInt(minSalary2));
-                    title.setMaxSalary(Integer.parseInt(maxSalary2));
+                    title.setTitle(titleTitle2);
+                    title.setFromDate(titleFdate2);
+                    title.setToDate(titleTdate2);
 
-                    jobDao.actualizar(job);
+                    titleDao.actualizar(title);
                     response.sendRedirect(request.getContextPath() + "/JobServlet");
                 }else{
-                    request.setAttribute("job",jobDao.buscarPorId(jobId2));
-                    request.getRequestDispatcher("job/form_edit.jsp").forward(request,response);
+                    request.setAttribute("title",titleDao.buscarPorEmp_no(titleEmpNo2));
+                    request.getRequestDispatcher("title/form_edit.jsp").forward(request,response);
                 }
 
                 break;
