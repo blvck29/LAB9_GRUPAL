@@ -36,7 +36,7 @@ public class TitleServlet extends HttpServlet {
 
                 break;
             case "new":
-                request.getRequestDispatcher("title/form_new.jsp").forward(request,response);
+                request.getRequestDispatcher("/title/form_new.jsp").forward(request,response);
                 break;
             case "edit":
                 String emp_no = request.getParameter("id");
