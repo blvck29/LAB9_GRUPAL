@@ -9,6 +9,6 @@
 <body>
 <h1><%= "Hello World!" %></h1>
 <br/>
-<a href="listar_employees">Hello Servlet</a>
+<a href="#">Hello Servlet</a>
 </body>
 </html>

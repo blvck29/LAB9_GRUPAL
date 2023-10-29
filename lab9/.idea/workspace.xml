@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a013cc1b-a72a-4ffc-a0d9-5bc4fe87162a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/beans/Title.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/daos/TitleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/servlets/MainServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/servlets/TitleServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/beans/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/beans/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/daos/DeptManDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/daos/DeptManDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/daos/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/model/daos/EmployeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lab9/servlets/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lab9/servlets/EmployeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +175,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698552388522</updated>
       <workItem from="1698552389372" duration="1294000" />
-      <workItem from="1698582432813" duration="4233000" />
+      <workItem from="1698582432813" duration="4372000" />
     </task>
     <servers />
   </component>
