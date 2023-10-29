@@ -45,7 +45,6 @@ public class DeptManDao {
 
                 listaDeptMan.add(deptMan);
 
-
             }
 
         } catch (SQLException e) {
