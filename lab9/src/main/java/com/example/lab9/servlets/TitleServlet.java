@@ -23,6 +23,8 @@ public class TitleServlet extends HttpServlet {
 
         String action = request.getParameter("action") ==null? "lista" : request.getParameter("action");
         TitleDao titleDao = new TitleDao();
+
+
         switch (action){
             case "lista":
                 ArrayList<Title> list = titleDao.list();
@@ -33,8 +35,9 @@ public class TitleServlet extends HttpServlet {
                 rd.forward(request,response);
 
                 break;
-
-
+            case "new":
+                request.getRequestDispatcher("title/form_new.jsp").forward(request,response);
+                break;
             case "edit":
                 String emp_no = request.getParameter("id");
                 Title title = titleDao.buscarPorEmp_no(emp_no);
@@ -78,23 +81,22 @@ public class TitleServlet extends HttpServlet {
 
         TitleDao titleDao = new TitleDao();
 
-        String action = request.getParameter("action") == null ? "crear" : request.getParameter("action");
+        String action = request.getParameter("action") == null ? "create" : request.getParameter("action");
+
+        String titleTitle = request.getParameter("title");
+        String titleFdate = request.getParameter("fromDate");
+        String titleTdate = request.getParameter("toDate");
 
         switch (action){
-            case "crear":
-                // TODO
+            case "create":
+                TitleDao.crear(titleTitle, titleFdate, titleTdate);
+                response.sendRedirect(request.getContextPath() + "/TitleServlet");
+
                 break;
             case "e":
                 String titleEmpNo2 = request.getParameter("empNo");
-                String titleTitle2 = request.getParameter("title");
-                String titleFdate2 = request.getParameter("fromDate");
-                String titleTdate2 = request.getParameter("toDate");
 
-                boolean isAllValid2 = true;
-
-                if(titleTitle2.length() > 35){
-                    isAllValid2 = false;
-                }
+                boolean isAllValid2 = titleTitle.length() <= 35;
 
                 if(titleEmpNo2.length() > 10){
                     isAllValid2 = false;
@@ -102,12 +104,12 @@ public class TitleServlet extends HttpServlet {
                 if(isAllValid2){
                     Title title = new Title();
                     title.setTitle(titleEmpNo2);
-                    title.setTitle(titleTitle2);
-                    title.setFromDate(titleFdate2);
-                    title.setToDate(titleTdate2);
+                    title.setTitle(titleTitle);
+                    title.setFromDate(titleFdate);
+                    title.setToDate(titleTdate);
 
                     titleDao.actualizar(title);
-                    response.sendRedirect(request.getContextPath() + "/JobServlet");
+                    response.sendRedirect(request.getContextPath() + "/TitleServlet");
                 }else{
                     request.setAttribute("title",titleDao.buscarPorEmp_no(titleEmpNo2));
                     request.getRequestDispatcher("title/form_edit.jsp").forward(request,response);

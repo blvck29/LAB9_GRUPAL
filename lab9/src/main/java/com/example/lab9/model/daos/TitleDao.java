@@ -86,6 +86,70 @@ public class TitleDao {
     }
 
 
+
+    public static int lastId(){
+
+        Title lastTitle = new Title();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        String url = "jdbc:mysql://localhost:3306/employees";
+        String sql = "select * from titles order by emp_no desc limit 1";
+
+
+        try (Connection conn = DriverManager.getConnection(url, username, password);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                lastTitle.setEmpNo(rs.getInt(1));
+                lastTitle.setTitle(rs.getString(2));
+                lastTitle.setFromDate(rs.getString(3));
+                lastTitle.setToDate(rs.getString(4));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return lastTitle.getEmpNo();
+    }
+
+    public static void crear(String titleTitle, String titleFdate, String titleTdate){
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        String url = "jdbc:mysql://localhost:3306/employees";
+        String sql = "insert into employees (emp_no, title, from_date, to_date) values (?,?,?,?)";
+        String username = "root";
+        String password = "root";
+
+        try (Connection connection = DriverManager.getConnection(url,username,password);
+             PreparedStatement pstmt = connection.prepareStatement(sql)){
+
+            int newId = lastId() + 1;
+
+            pstmt.setInt(1, newId);
+            pstmt.setString(2,titleTitle);
+            pstmt.setString(3,titleFdate);
+            pstmt.setString(4,titleTdate);
+
+            pstmt.executeUpdate();
+
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public void borrar(String emp_no) throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -119,7 +183,7 @@ public class TitleDao {
         String username = "root";
         String password = "root";
 
-        String sql = "update titles set title = ?, from_date = ?, to_date = ? where emp_no = ?";
+        String sql = "update titles set title = ?, from_date = ?, to_date = ?" + "where emp_no = ?";
 
         try(Connection connection = DriverManager.getConnection(url,username,password);
             PreparedStatement pstmt = connection.prepareStatement(sql)){
