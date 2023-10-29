@@ -142,8 +142,8 @@ public class EmployeeDao {
                     employee.setBirthDate(rs.getString(2));
                     employee.setFirstName(rs.getString(3));
                     employee.setLastName(rs.getString(4));
-                    employee.setGender(rs.getString(4));
-                    employee.setHireDate(rs.getString(4));
+                    employee.setGender(rs.getString(5));
+                    employee.setHireDate(rs.getString(6));
                 }
             }
         } catch (SQLException e) {
@@ -155,7 +155,7 @@ public class EmployeeDao {
 
 
 
-    public static void actualizar(Employee emp){
+    public static void update(Employee emp){
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -165,28 +165,25 @@ public class EmployeeDao {
 
         String url = "jdbc:mysql://localhost:3306/employees";
 
-        try (Connection connection = DriverManager.getConnection(url,username,password);){
-
-            String sql = "UPDATE employees SET birth_date=?, first_name=?, last_name=?, gender=?, hire_date=?" + "WHERE emp_no = ?";
+        String sql = "UPDATE employees SET birth_date=?, first_name=?, last_name=?, gender=?, hire_date=?" + "WHERE emp_no = ?";
 
 
-            try (PreparedStatement pstmt = connection.prepareStatement(sql)){
+        try (Connection connection = DriverManager.getConnection(url,username,password);
+             PreparedStatement pstmt = connection.prepareStatement(sql)){
+
                 pstmt.setString(1, emp.getBirthDate());
                 pstmt.setString(2, emp.getFirstName());
                 pstmt.setString(3, emp.getLastName());
                 pstmt.setString(4, emp.getGender());
                 pstmt.setString(5, emp.getHireDate());
-
                 pstmt.setInt(6, emp.getEmpNo());
 
                 pstmt.executeUpdate();
-            }
+
 
         } catch (SQLException e){
             throw new RuntimeException(e);
         }
-
-
 
     }
 

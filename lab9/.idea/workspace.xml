@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a013cc1b-a72a-4ffc-a0d9-5bc4fe87162a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employee/form_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employee/form_edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/employee/lista.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employee/lista.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/title/lista.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/title/lista.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="a013cc1b-a72a-4ffc-a0d9-5bc4fe87162a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/User/Documents/asdasd/LAB9_GRUPAL/lab9",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

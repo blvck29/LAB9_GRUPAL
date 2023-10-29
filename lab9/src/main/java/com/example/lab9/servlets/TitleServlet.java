@@ -107,7 +107,7 @@ public class TitleServlet extends HttpServlet {
                     title.setToDate(titleTdate2);
 
                     titleDao.actualizar(title);
-                    response.sendRedirect(request.getContextPath() + "/JobServlet");
+                    response.sendRedirect(request.getContextPath() + "/TitleServlet");
                 }else{
                     request.setAttribute("title",titleDao.buscarPorEmp_no(titleEmpNo2));
                     request.getRequestDispatcher("title/form_edit.jsp").forward(request,response);
