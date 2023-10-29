@@ -73,7 +73,7 @@ public class EmployeeServlet extends HttpServlet {
 
         String action = request.getParameter("action") == null ? "crear" : request.getParameter("action");
 
-
+        String empNo = request.getParameter("empNo");
         String birthDate = request.getParameter("birthDate");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -89,16 +89,15 @@ public class EmployeeServlet extends HttpServlet {
                 break;
             case "e":
                 Employee emp = new Employee();
-                int empNo = Integer.parseInt(request.getParameter("empNo"));
 
-                emp.setEmpNo(empNo);
+                emp.setEmpNo(Integer.parseInt(empNo));
                 emp.setBirthDate(birthDate);
                 emp.setFirstName(firstName);
                 emp.setLastName(lastName);
                 emp.setGender(gender);
                 emp.setHireDate(hireDate);
 
-                EmployeeDao.actualizar(emp);
+                EmployeeDao.update(emp);
 
                 response.sendRedirect(request.getContextPath() + "/EmployeeServlet");
                 break;
