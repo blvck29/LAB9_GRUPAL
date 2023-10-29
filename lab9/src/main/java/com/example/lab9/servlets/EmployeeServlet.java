@@ -22,7 +22,6 @@ public class EmployeeServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String action = request.getParameter("action") == null ? "lista" : request.getParameter("action");
-
         EmployeeDao employeeDao = new EmployeeDao();
 
         switch (action){
