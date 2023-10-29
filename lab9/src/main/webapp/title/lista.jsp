@@ -1,7 +1,8 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.example.clase10crud.beans.Title" %>
+<%@ page import="com.example.lab9.model.beans.Title" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="lista" scope="request" type="ArrayList<Title>" /><html>
+
 <head>
     <title>Trabajos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">

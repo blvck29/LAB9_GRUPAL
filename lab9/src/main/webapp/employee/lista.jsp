@@ -1,8 +1,9 @@
 
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.example.clase10crud.beans.Employee" %>
+<%@ page import="com.example.lab9.model.beans.Employee" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="lista" scope="request" type="ArrayList<Employee>" />
+
 <html>
     <head>
         <title>Trabajos</title>

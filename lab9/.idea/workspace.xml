@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a013cc1b-a72a-4ffc-a0d9-5bc4fe87162a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/employee/form_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employee/form_edit.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/employee/lista.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/employee/lista.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/title/lista.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/title/lista.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +179,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698552388522</updated>
       <workItem from="1698552389372" duration="1294000" />
-      <workItem from="1698582432813" duration="5209000" />
+      <workItem from="1698582432813" duration="5545000" />
     </task>
     <servers />
   </component>
