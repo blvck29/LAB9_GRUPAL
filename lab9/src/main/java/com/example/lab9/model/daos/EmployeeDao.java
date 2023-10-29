@@ -259,11 +259,4 @@ public class EmployeeDao {
         return listaEmpleados;
     }
 
-    public int searchLastId() {
-        // TODO
-        return 0;
-    }
-
-
-
 }
